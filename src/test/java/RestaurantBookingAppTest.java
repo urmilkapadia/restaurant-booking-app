@@ -1,4 +1,5 @@
 
+import model.Booking;
 import org.junit.Test;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -8,7 +9,7 @@ public class RestaurantBookingAppTest {
 
     @Test
     public void testBookingCreation() {
-        RestaurantBookingApp.Booking booking = new RestaurantBookingApp.Booking(
+        Booking booking = new Booking(
             "John Doe", "123-456-789", 4, LocalDate.now(), LocalTime.of(19, 0)
         );
         assertEquals("John Doe", booking.getCustomerName());
@@ -32,7 +33,7 @@ public class RestaurantBookingAppTest {
 
     @Test
     public void testEmptyNameCheck() {
-        RestaurantBookingApp.Booking booking = new RestaurantBookingApp.Booking(
+        Booking booking = new Booking(
             "", "123-456-789", 4, LocalDate.now(), LocalTime.of(18, 0)
         );
         assertTrue("Customer name should be empty", booking.getCustomerName().trim().isEmpty());
